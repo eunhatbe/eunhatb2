@@ -32,6 +32,8 @@ receiver = threading.Thread(target=receive, args=(connection_sock, ))
 
 sender.start()
 receiver.start()
+sender.join()
+receiver.join()
 
 while(1):
     time.sleep(0.1)
